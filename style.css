@@ -355,3 +355,67 @@ body {
     width: 380px;
     max-width: 90%;
 }
+
+/* Pengaturan Hiasan: Lebih Besar dan Tersebar Bebas */
+.aesthetic-decor {
+    position: absolute;
+    font-size: 2.8rem; /* Ukuran dibuat jauh lebih besar */
+    z-index: 6;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
+    pointer-events: none;
+}
+
+/* Posisi Tersebar Mengelilingi Kartu Utama */
+.decor-1 {
+    top: -25px;
+    left: 32%;
+    transform: rotate(-15deg);
+}
+
+.decor-2 {
+    top: -35px;
+    right: 35%;
+    transform: rotate(20deg);
+}
+
+.decor-3 {
+    top: 15%;
+    left: 28%;
+    transform: rotate(-10deg);
+}
+
+.decor-4 {
+    top: 20%;
+    right: 27%;
+    transform: rotate(15deg);
+}
+
+.decor-5 {
+    bottom: -25px;
+    left: 40%;
+    transform: rotate(10deg);
+}
+
+.decor-6 {
+    bottom: -20px;
+    right: 42%;
+    transform: rotate(-20deg);
+}
+
+.decor-7 {
+    top: 50%;
+    left: 23%;
+    transform: rotate(-25deg);
+}
+
+.decor-8 {
+    top: 45%;
+    right: 23%;
+    transform: rotate(30deg);
+}
+
+.decor-9 {
+    top: 5%;
+    left: 48%;
+    transform: rotate(10deg);
+}
