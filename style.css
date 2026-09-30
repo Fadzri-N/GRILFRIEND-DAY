@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle, #5e162f 0%, #200008 100%);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Transisi Halaman Smooth & Animasi Muncul */
+.page {
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.page.active {
+    display: flex;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Efek Animasi Keluar Saat Ditutup (Opsional untuk kesan mulus) */
+.page.fade-out {
+    display: flex;
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+/* Judul */
+.title-top {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 4.2rem;
+    color: #ffd1dc;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+/* Halaman 1: Amplop Utama */
+.envelope-main {
+    background: #fdfbf7;
+    width: 320px;
+    height: 200px;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.envelope-main:hover {
+    transform: scale(1.03);
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-left: 160px solid transparent;
+    border-right: 160px solid transparent;
+    border-top: 110px solid #ede8df;
+}
+
+.seal-circle {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background: radial-gradient(circle, #b147a0 0%, #511247 100%);
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5), inset 0 2px 3px rgba(255,255,255,0.4);
+    z-index: 10;
+}
+
+.tap-text {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    color: #ff99a8;
+}
+
+/* HALAMAN 2: TAMPILAN SURAT ESTETIK & POLAROID MULTI */
+.main2-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    max-width: 900px;
+}
+
+/* Surat Utama di Tengah */
+.center-letter-card {
+    background: #fdfbf7;
+    color: #333;
+    padding: 35px 40px;
+    width: 360px;
+    border-radius: 8px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.6);
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+
+.letter-title {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3.8rem;
+    color: #8b0000;
+    margin-bottom: 5px;
+    line-height: 1.1;
+}
+
+.letter-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+.tap-surprise {
+    background: #b147a0;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(177, 71, 160, 0.4);
+    transition: background 0.2s, transform 0.2s;
+    letter-spacing: 1px;
+}
+
+.tap-surprise:hover {
+    background: #8e3580;
+    transform: scale(1.05);
+}
+
+/* Polaroid Group Samping */
+.polaroid-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    z-index: 4;
+}
+
+.polaroid-card {
+    background: white;
+    padding: 8px 8px 20px 8px;
+    width: 115px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.polaroid-card:hover {
+    transform: scale(1.1) rotate(0deg) !important;
+    z-index: 10;
+}
+
+.polaroid-card img {
+    width: 100%;
+    height: 95px;
+    object-fit: cover;
+}
+
+/* Kemiringan Polaroid ala Estetik */
+.rot-1 { transform: rotate(-12deg); }
+.rot-2 { transform: rotate(8deg); }
+.rot-3 { transform: rotate(10deg); }
+.rot-4 { transform: rotate(-8deg); }
+.rot-5 { transform: rotate(5deg); }
+
+/* Hiasan Bunga & Kupu-kupu */
+.aesthetic-decor {
+    position: absolute;
+    font-size: 1.3rem;
+    z-index: 6;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    pointer-events: none;
+}
+
+.butterfly {
+    bottom: -15px;
+    left: 38%;
+    font-size: 1.5rem;
+    transform: rotate(-15deg);
+}
+
+.rose-left {
+    top: -12px;
+    left: 24%;
+}
+
+.rose-right {
+    top: -10px;
+    right: 24%;
+}
+
+/* Menu Pilihan */
+.menu-grid {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+.menu-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 25px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 110px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(255, 153, 168, 0.3);
+}
+
+.menu-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* Tombol Back */
+.back-btn {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.back-btn:hover {
+    background: #1b4332;
+    transform: scale(1.05);
+}
+
+/* Halaman Journey */
+.polaroid-grid-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 600px;
+}
+
+.polaroid-item {
+    background: white;
+    padding: 10px 10px 25px 10px;
+    width: 130px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease;
+}
+
+.polaroid-item:hover {
+    transform: scale(1.08) rotate(0deg) !important;
+}
+
+.polaroid-item img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+}
+
+/* Halaman Moment */
+.moment-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 750px;
+    text-align: left;
+}
+
+.letter-paper {
+    background: #fdfbf7;
+    color: #333;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    flex: 1;
+}
+
+.letter-paper h3 {
+    font-family: 'Pinyon Script', cursive;
+    font-size: 3.2rem;
+    color: #8b0000;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+.letter-paper p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.polaroid-frame-single {
+    background: white;
+    padding: 10px 10px 15px 10px;
+    width: 180px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    transform: rotate(4deg);
+    text-align: center;
+}
+
+.polaroid-frame-single img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+/* Halaman Playlist */
+.playlist-layout {
+    width: 380px;
+    max-width: 90%;
+}

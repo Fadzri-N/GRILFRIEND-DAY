@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Girlfriend Day</title>
+    <!-- Google Fonts: Pinyon Script & Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HALAMAN 1: PEMBUKA (PRESS THE ENVELOPE) -->
+    <div id="page1" class="page active">
+      <div
+        onclick="openEnvelope()"
+        style="
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+        "
+      >
+        <h1 class="title-top">Press the Envelope</h1>
+        <div class="envelope-main">
+          <div class="envelope-flap"></div>
+          <div class="seal-circle"></div>
+        </div>
+        <div class="tap-text">tap to lanjut</div>
+      </div>
+    </div>
+
+    <!-- HALAMAN 2: UTAMA (SURAT TENGAH + BANYAK POLAROID & HIASAN) -->
+    <div id="page2" class="page">
+      <div class="main2-container">
+        <!-- Hiasan Kupu-kupu & Bunga -->
+        <div class="aesthetic-decor butterfly">🦋</div>
+        <div class="aesthetic-decor rose-left">🌹</div>
+        <div class="aesthetic-decor rose-right">🌹</div>
+
+        <!-- Kumpulan Polaroid Sisi Kiri -->
+        <div class="polaroid-group left">
+          <div class="polaroid-card rot-1">
+            <img src="images/foto 1.jpeg" alt="Foto" />
+          </div>
+          <div class="polaroid-card rot-2">
+            <img src="images/foto 2.jpeg" alt="Foto" />
+          </div>
+        </div>
+
+        <!-- Surat Utama di Tengah -->
+        <div class="center-letter-card">
+          <h2 class="letter-title">Happy Girlfriend Day</h2>
+          <p class="letter-date">01.10.26</p>
+          <div class="tap-surprise" onclick="goToPage('page-menu')">
+            TAP FOR SURPRISE
+          </div>
+        </div>
+
+        <!-- Kumpulan Polaroid Sisi Kanan -->
+        <div class="polaroid-group right">
+          <div class="polaroid-card rot-3">
+            <img src="images/foto 3.jpeg" alt="Foto" />
+          </div>
+          <div class="polaroid-card rot-4">
+            <img src="images/foto 4.jpeg" alt="Foto" />
+          </div>
+          <div class="polaroid-card rot-5">
+            <img src="images/foto 5.jpeg" alt="Foto" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN MENU PILIHAN (CHOOSE THE SURPRISE) -->
+    <div id="page-menu" class="page">
+      <h1 class="title-top">Choose the Surprise</h1>
+      <div class="menu-grid">
+        <div class="menu-item" onclick="goToPage('page-journey')">
+          <div class="menu-icon">📷</div>
+          <p>Journey</p>
+        </div>
+        <div class="menu-item" onclick="goToPage('page-moment')">
+          <div class="menu-icon">⏳</div>
+          <p>Moment</p>
+        </div>
+        <div class="menu-item" onclick="goToPage('page-playlist')">
+          <div class="menu-icon">💽</div>
+          <p>Playlist</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN JOURNEY (GALERI POLAROID) -->
+    <div id="page-journey" class="page">
+      <button class="back-btn" onclick="goToPage('page-menu')">BACK</button>
+      <h1 class="title-top" style="margin-bottom: 20px">Our Journey</h1>
+      <div class="polaroid-grid-container">
+        <div class="polaroid-item" style="transform: rotate(-5deg)">
+          <img src="images/journey 2.jpeg" />
+        </div>
+        <div class="polaroid-item" style="transform: rotate(3deg)">
+          <img src="images/journey 4.jpeg" />
+        </div>
+        <div class="polaroid-item" style="transform: rotate(-2deg)">
+          <img src="images/journey 3.jpeg" />
+        </div>
+        <div class="polaroid-item" style="transform: rotate(4deg)">
+          <img src="images/journey 1.jpeg" />
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN MOMENT (SURAT CINTA + FOTO TANPA TOMBOL) -->
+    <div id="page-moment" class="page">
+      <button class="back-btn" onclick="goToPage('page-menu')">BACK</button>
+      <div class="moment-layout">
+        <div class="letter-paper">
+          <h3>My Loveee</h3>
+          <p>
+            Happy Girlfriend Day my loveee. dii antara sekian banyak hal yang
+            bikin aku bersyukur setiap hari, kamu selalu ada di urutan teratas.
+            Terima kasih sudah bikin hariku selalu terasa lebih tenang dan
+            indah. You will always be my favorite place to goo.
+          </p>
+        </div>
+        <div class="polaroid-frame-single">
+          <img src="images/moment.jpeg" alt="Foto" />
+        </div>
+      </div>
+    </div>
+
+    <!-- HALAMAN PLAYLIST (SPOTIFY EMBED FULL) -->
+    <div id="page-playlist" class="page">
+      <button class="back-btn" onclick="goToPage('page-menu')">BACK</button>
+      <h1 class="title-top" style="margin-bottom: 15px">Our Playlist</h1>
+      <div class="playlist-layout">
+        <iframe
+          style="border-radius: 12px"
+          src="https://open.spotify.com/embed/playlist/4xP4Ro6YVC09n1lsq9g1kx?utm_source=generator&theme=0"
+          width="100%"
+          height="380"
+          frameborder="0"
+          allowfullscreen=""
+          allow="
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            fullscreen;
+            picture-in-picture;
+          "
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
